@@ -49,8 +49,9 @@ def quickHull(a, n, p1, p2, side):
     quickHull(a, n, a[ind], p1, -findSide(a[ind], p1, p2))
     quickHull(a, n, a[ind], p2, -findSide(a[ind], p2, p1))
  
-def printHull(a, n):
+def printHull(a):
     # a[i].second -> y-coordinate of the ith point
+    n = len(a)
     if (n < 3):
         print("Convex hull not possible")
         return
@@ -81,10 +82,4 @@ def printHull(a, n):
         x = element.split("$")
         print("(", x[0], ",", x[1], ") ", end = " ")
  
-# Driver code
-a = [[0, 3], [1, 1], [2, 2], [4, 4],
-     [0, 0], [1, 2], [3, 1], [3, 3]]
-n = len(a)
-printHull(a, n)
  
-# The code is contributed by Nidhi goel
